@@ -1,3 +1,5 @@
+// Two sorting functions for UI buttons
+
 $('#sortAscending').on('click', function () {
     var $photos = $('#photos'),
         $photoArray = $photos.children('#pictureFrame');
