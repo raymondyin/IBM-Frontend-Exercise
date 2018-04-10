@@ -1,14 +1,20 @@
 <% include layout/header %>
+
 <div class="container">
-    <div class="row">
+    <div class="row" id="photos">
+
         <% data["photos"]["photo"].forEach(function(sampleImgObj) { %>
             <% var urlDefault = 'https://farm' + sampleImgObj.farm + '.staticflickr.com/' + sampleImgObj.server + '/' + sampleImgObj.id + '_' + sampleImgObj.secret + '.jpg'; %>
-            <div class="col-lg-4 col-sm-6">
+            <div class="col-lg-4 col-sm-6" id="pictureFrame" title="<%= sampleImgObj.title %>">
                 <div class="thumbnail">
                     <img src="<%= urlDefault %>">
+                    <div class="caption">
+                        <p><%= sampleImgObj.title %></p>
+                    </div>
                 </div>
             </div>
         <% }) %>
+        
     </div>
 </div>
 
