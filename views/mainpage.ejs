@@ -1,10 +1,15 @@
 <% include layout/header %>
 <div class="container">
-
-<% data["photos"]["photo"].forEach(function(photoObject) { %>
-    <%= photoObject['id'] %>
-<% }) %>
-
+    <div class="row">
+        <% data["photos"]["photo"].forEach(function(sampleImgObj) { %>
+            <% var urlDefault = 'https://farm' + sampleImgObj.farm + '.staticflickr.com/' + sampleImgObj.server + '/' + sampleImgObj.id + '_' + sampleImgObj.secret + '.jpg'; %>
+            <div class="col-lg-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= urlDefault %>">
+                </div>
+            </div>
+        <% }) %>
+    </div>
 </div>
 
 <% include layout/footer %>
