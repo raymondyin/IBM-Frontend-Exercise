@@ -1,4 +1,10 @@
 <% include layout/header %>
-<h1>This is the main page</h1>
-<p><%= data %>
+<div class="container">
+
+<% data["photos"]["photo"].forEach(function(photoObject) { %>
+    <%= photoObject['id'] %>
+<% }) %>
+
+</div>
+
 <% include layout/footer %>
